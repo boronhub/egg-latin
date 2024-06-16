@@ -1,9 +1,5 @@
 use egg::{define_language, Id, Symbol};
 
-// mod value;
-
-// pub use value::*;
-
 pub type RecExpr = egg::RecExpr<POS>;
 
 define_language! {

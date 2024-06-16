@@ -27,8 +27,9 @@ fn main() {
     // context
 
     let rules: &[Rewrite<POS, ()>] = &[
-        rw!("svo"; "(sentence (sub ?s) (d_obj ?do) (verb ?v))" => "(sentence (sub ?s) (verb ?v) (d_obj ?do))"),
+        rw!("sov"; "(sentence (sub ?s) (verb ?v) (d_obj ?do))" => "(sentence (sub ?s) (d_obj ?do) (verb ?v))"),
         rw!("osv"; "(sentence (sub ?s) (emp (d_obj ?do)) (verb ?v))" => "(sentence (d_obj ?do) (sub ?s) (verb ?v))"),
+        rw!("vso"; "(sentence (sub ?s) (d_obj ?do) (emp (verb ?v)))" => "(sentence (verb ?v) (sub ?s) (d_obj ?do))"),
     ];
 
     let start = "(sentence (sub puella) (d_obj canem) (verb amat))"
